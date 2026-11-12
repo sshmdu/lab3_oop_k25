@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab3.AboutPage"
+             Title="About program">
+
+    <VerticalStackLayout Padding="30" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Dispatcher for JSON: Book catalogue" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label Text="Author: Tkachenko Anastasiia, group K-25" FontSize="16" HorizontalOptions="Center" />
+        <Label Text="2 course, 2026" FontSize="16" HorizontalOptions="Center" />
+        <BoxView HeightRequest="1" Color="Gray" Margin="0,10" />
+        <Label Text="The program is designed for opening, editing, serialization/deserialization, and LINQ searching of a book collection in JSON format"
+               HorizontalTextAlignment="Center"
+               WidthRequest="400" />
+        <Button Text="Close" Clicked="OnClose" HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

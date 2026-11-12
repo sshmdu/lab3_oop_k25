@@ -1,0 +1,65 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Call of Cthulhu",
+    "Author": "H. P. Lovecraft",
+    "Genre": "Horror",
+    "Year": 2023,
+    "Price": 750.00,
+    "Pages": 80
+  },
+  {
+    "Id": 2,
+    "Title": "Complete Fiction, Volume 1",
+    "Author": "H. P. Lovecraft",
+    "Genre": "Horror",
+    "Year": 2021,
+    "Price": 500.00,
+    "Pages": 448
+  },
+  {
+    "Id": 3,
+    "Title": "At the Mountains of Madness, Volume 1",
+    "Author": "H. P. Lovecraft, Gou Tanabe",
+    "Genre": "Manga / Horror",
+    "Year": 2024,
+    "Price": 850.00,
+    "Pages": 64
+  },
+  {
+    "Id": 4,
+    "Title": "Fight Club",
+    "Author": "Chuck Palahniuk",
+    "Genre": "Thriller",
+    "Year": 2022,
+    "Price": 350.00,
+    "Pages": 256
+  },
+  {
+    "Id": 5,
+    "Title": "Hannibal",
+    "Author": "Thomas Harris",
+    "Genre": "Thriller",
+    "Year": 2024,
+    "Price": 420.00,
+    "Pages": 480
+  },
+  {
+    "Id": 7,
+    "Title": "King's Game, Volume 2",
+    "Author": "Nobuaki Kanazawa",
+    "Genre": "Manga / Mystery",
+    "Year": 2023,
+    "Price": 220.00,
+    "Pages": 160
+  },
+  {
+    "Id": 8,
+    "Title": "The Witcher: Crossroads of Ravens",
+    "Author": "Andrzej Sapkowski",
+    "Genre": "Fantasy",
+    "Year": 2025,
+    "Price": 350.00,
+    "Pages": 256
+  }
+]

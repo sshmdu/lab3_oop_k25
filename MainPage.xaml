@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:lab3"
+             x:Class="lab3.MainPage"
+             Title="Manager of book catalogue">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto" Padding="15" RowSpacing="8">
+
+        <FlexLayout Grid.Row="0" Wrap="Wrap" JustifyContent="Start">
+            <Button Text="Open" Clicked="OnOpen" Margin="0,0,8,4"/>
+            <Button Text="Add" Clicked="OnAdd" Margin="0,0,8,4"/>
+            <Button Text="Save as..." Clicked="OnSave" Margin="0,0,8,4"/>
+            <Button Text="Reset" Clicked="OnReset" Margin="0,0,8,4"/>
+            <Button Text="About program" Clicked="OnAbout" Margin="0,0,8,4"/>
+        </FlexLayout>
+
+        <!-- 1 criteria -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,130" ColumnSpacing="8">
+            <Entry x:Name="SearchEntry" Placeholder="Title or author"/>
+            <Button Grid.Column="1" Text="Search" Clicked="OnSearchText"/>
+        </Grid>
+
+        <!-- 2 criteria -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,130" ColumnSpacing="8">
+            <Entry x:Name="GenreEntry" Placeholder="Genre"/>
+            <Button Grid.Column="1" Text="By genre" Clicked="OnSearchGenre"/>
+        </Grid>
+
+        <!-- 3 criteria -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,130" ColumnSpacing="8">
+            <Entry x:Name="YearEntry" Placeholder="Year" Keyboard="Numeric"/>
+            <Button Grid.Column="1" Text="By year" Clicked="OnSearchYear"/>
+        </Grid>
+
+        <!-- Head of tablet -->
+        <Grid Grid.Row="4" ColumnDefinitions="40,*,120,60,70,90,130"
+              ColumnSpacing="5" Padding="8,6" BackgroundColor="#E0E0E0">
+            <Label Text="ID" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Name / Author" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Text="Genre" FontAttributes="Bold"/>
+            <Label Grid.Column="3" Text="Year" FontAttributes="Bold"/>
+            <Label Grid.Column="4" Text="Pages" FontAttributes="Bold"/>
+            <Label Grid.Column="5" Text="Price" FontAttributes="Bold"/>
+            <Label Grid.Column="6" Text="Actions" FontAttributes="Bold"/>
+        </Grid>
+
+        <!-- Tablet lines -->
+        <CollectionView x:Name="BooksView" Grid.Row="5">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:Book">
+                    <Border Stroke="#CCCCCC" StrokeThickness="1" Padding="8" Margin="0,2">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="6"/>
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="40,*,120,60,70,90,130" ColumnSpacing="5">
+                            <Label Text="{Binding Id}" VerticalTextAlignment="Center"/>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding Title}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Author}" TextColor="Gray" FontSize="12"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="2" Text="{Binding Genre}" VerticalTextAlignment="Center"/>
+                            <Label Grid.Column="3" Text="{Binding Year}" VerticalTextAlignment="Center"/>
+                            <Label Grid.Column="4" Text="{Binding Pages}" VerticalTextAlignment="Center"/>
+                            <Label Grid.Column="5" Text="{Binding Price, StringFormat='{0:F2}'}" VerticalTextAlignment="Center"/>
+                            <HorizontalStackLayout Grid.Column="6" Spacing="4">
+                                <Button Text="Edit" Padding="8,0" Clicked="OnEdit"/>
+                                <Button Text="Del" Padding="8,0" BackgroundColor="#D32F2F" TextColor="White" Clicked="OnDelete"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label x:Name="StatusLabel" Grid.Row="6" Text="File is not open" TextColor="Gray"/>
+    </Grid>
+</ContentPage>
